@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/YotpoLtd/argocd-example.git
       revision: HEAD
       files:
-      - path: "helm-values-files/*.yaml"
+      - path: "helm-values-files/**/*.yaml"
   template:
     metadata:
       name: '{{ yotpo.deploymentName }}'

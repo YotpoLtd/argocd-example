@@ -10,7 +10,7 @@ spec:
     server: https://kubernetes.default.svc
   project: infra
   source:
-    path: "helm-values-files/telegraf.yaml"
+    path: "helm-values-files/telegraf"
     repoURL: https://github.com/YotpoLtd/argocd-example.git
     targetRevision: HEAD
     plugin:
