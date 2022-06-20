@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-test
+  name: application-telegraf-test
   namespace: infra
 spec:
   destination:
