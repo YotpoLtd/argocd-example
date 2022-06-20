@@ -28,3 +28,7 @@ spec:
           value: "telegraf"
         - name: HELM_VALUES_FILE
           value: "telegraf.yaml"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -37,3 +37,7 @@ spec:
               value: "{{ yotpo.chartName }}"
             - name: HELM_VALUES_FILE
               value: "{{ filepath }}"
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
