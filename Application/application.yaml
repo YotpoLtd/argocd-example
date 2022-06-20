@@ -27,4 +27,4 @@ spec:
         - name: HELM_CHART_NAME
           value: "telegraf"
         - name: HELM_VALUES_FILE
-          value: ./telegraf.yaml"
+          value: "telegraf.yaml"
