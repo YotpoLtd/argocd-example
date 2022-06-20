@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: applicationset-test
+  namespace: infra
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/YotpoLtd/argocd-example.git
+      revision: HEAD
+      files:
+      - path: "helm-values-files/*.yaml"
+  template:
+    metadata:
+      name: '{{ yotpo.deploymentName }}'
+    spec:
+      destination:
+        namespace: "{{ yotpo.namespace }}"
+        server: https://kubernetes.default.svc
+      project: "{{ yotpo.namespace }}"
+      source:
+        path: "./"
+        repoURL: https://github.com/YotpoLtd/argocd-example.git
+        targetRevision: HEAD
+        plugin:
+          name: helm-yotpo
+          env:
+            - name: HELM_RELEASE_NAME
+              value: "{{ yotpo.deploymentName }}"
+            - name: HELM_CHART_VERSION
+              value: "{{ yotpo.chartVersion }}"
+            - name: NAMESPACE
+              value: "{{yotpo.namespace}}"
+            - name: HELM_REPO_URL
+              value: "{{ yotpo.chartPath }}"
+            - name: HELM_CHART_NAME
+              value: "{{ yotpo.chartName }}"
+            - name: HELM_VALUES_FILE
+              value: "{{ filepath }}"
