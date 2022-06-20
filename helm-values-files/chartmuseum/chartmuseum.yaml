@@ -1,6 +1,6 @@
 yotpo:
-  deploymentName: chartmuseum
-  chartName: chartmuseum/chartmuseum
+  deploymentName: chartmuseum-test
+  chartName: chartmuseum
   chartPath: https://chartmuseum.github.io/charts
   chartVersion: 3.8.0
   namespace: infra

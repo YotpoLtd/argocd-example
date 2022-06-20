@@ -1,5 +1,5 @@
 yotpo:
-  chartName: elastic/filebeat
+  chartName: filebeat
   deploymentName: filebeat-test
   chartPath: https://helm.elastic.co
   chartVersion: 7.17.3
